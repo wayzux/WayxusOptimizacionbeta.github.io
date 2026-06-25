@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wayzux Optis</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,10 +15,25 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#0a0f1c;
+    background:#090f1f;
     color:white;
     overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(79,70,229,.25), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(6,182,212,.25), transparent 30%);
+    z-index:-1;
 }
 
 .hero{
@@ -27,91 +42,104 @@ body{
     align-items:center;
     justify-content:center;
     padding:50px;
-    background:
-    radial-gradient(circle at top left,#4f46e5 0%,transparent 40%),
-    radial-gradient(circle at bottom right,#06b6d4 0%,transparent 40%),
-    #0a0f1c;
 }
 
 .container{
     max-width:1200px;
+    width:100%;
     display:flex;
+    flex-wrap:wrap;
     gap:60px;
     align-items:center;
-    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .logo{
     flex:1;
+    min-width:300px;
     text-align:center;
 }
 
 .logo img{
-    width:400px;
+    width:450px;
     max-width:100%;
-    filter:drop-shadow(0 0 30px rgba(99,102,241,.6));
+    filter:drop-shadow(0 0 35px rgba(79,70,229,.7));
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
 }
 
 .content{
     flex:1;
+    min-width:300px;
 }
 
 .badge{
     display:inline-block;
-    padding:8px 18px;
-    border-radius:30px;
+    padding:10px 20px;
+    border-radius:50px;
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.1);
     margin-bottom:20px;
+    backdrop-filter:blur(10px);
 }
 
 h1{
-    font-size:4rem;
+    font-size:4.5rem;
     line-height:1;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .gradient{
-    background:linear-gradient(90deg,#4f46e5,#06b6d4);
+    background:linear-gradient(90deg,#6366f1,#06b6d4);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-p{
+.content p{
     color:#cbd5e1;
-    font-size:1.1rem;
-    margin-bottom:25px;
+    font-size:1.15rem;
+    line-height:1.8;
+    margin-bottom:30px;
 }
 
 .buttons{
     display:flex;
-    gap:15px;
     flex-wrap:wrap;
+    gap:15px;
 }
 
 .btn{
+    padding:16px 30px;
+    border-radius:14px;
     text-decoration:none;
-    padding:15px 30px;
-    border-radius:12px;
     font-weight:600;
     transition:.3s;
 }
 
 .download{
-    background:linear-gradient(90deg,#4f46e5,#06b6d4);
+    background:linear-gradient(90deg,#6366f1,#06b6d4);
     color:white;
 }
 
 .github{
-    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.05);
     color:white;
+    border:1px solid rgba(255,255,255,.1);
 }
 
 .btn:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 }
 
-.features{
+section{
     padding:100px 10%;
 }
 
@@ -123,21 +151,22 @@ p{
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
 .card{
-    background:#111827;
+    background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
+    backdrop-filter:blur(10px);
     padding:30px;
+    border-radius:20px;
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:#4f46e5;
+    transform:translateY(-8px);
+    border-color:#6366f1;
 }
 
 .card h3{
@@ -145,22 +174,22 @@ p{
     color:#60a5fa;
 }
 
-.stats{
-    padding:100px 10%;
-    text-align:center;
+.card p{
+    color:#cbd5e1;
+    line-height:1.7;
 }
 
 .stats-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:30px;
-    margin-top:40px;
+    gap:25px;
 }
 
 .stat{
-    background:#111827;
+    background:rgba(255,255,255,.05);
     padding:30px;
     border-radius:20px;
+    text-align:center;
 }
 
 .stat h2{
@@ -168,15 +197,34 @@ p{
     color:#06b6d4;
 }
 
+.stat p{
+    margin-top:10px;
+    color:#cbd5e1;
+}
+
 footer{
     text-align:center;
     padding:40px;
     color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
 @media(max-width:768px){
+
     h1{
-        font-size:2.8rem;
+        font-size:3rem;
+    }
+
+    .title{
+        font-size:2.2rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
     }
 }
 </style>
@@ -184,128 +232,182 @@ footer{
 <body>
 
 <section class="hero">
-    <div class="container">
 
-        <div class="logo">
-            <img src="logo.png" alt="Wayzux Optis Logo">
-        </div>
+<div class="container">
 
-        <div class="content">
-            <span class="badge">🚀 Optimización avanzada</span>
+<div class="logo">
+<img src="logo.png" alt="Wayzux Optis">
+</div>
 
-            <h1>
-                <span class="gradient">Wayzux Optis</span>
-            </h1>
+<div class="content">
 
-            <p>
-                La herramienta definitiva para optimizar tu PC de forma rápida y segura.
-                Diseñada para liberar recursos innecesarios, reducir procesos en segundo plano
-                y mejorar el rendimiento general del sistema.
-            </p>
+<div class="badge">
+🚀 Optimización avanzada para Windows
+</div>
 
-            <div class="buttons">
-                <a href="Optimizacion wayzux (beta).rar" class="btn download">⬇ Descargar</a>
-                <a href="hhttps://github.com/wayzux/WayxusOptimizacionbeta.github.io" class="btn github">⭐ GitHub</a>
-            </div>
-        </div>
+<h1>
+<span class="gradient">Wayzux Optis</span>
+</h1>
 
-    </div>
-</section>
+<p>
+Wayzux Optis es una herramienta gratuita de optimización para Windows diseñada
+para mejorar el rendimiento general del sistema. Ayuda a liberar recursos,
+eliminar archivos innecesarios y optimizar procesos para conseguir una experiencia
+más fluida tanto en juegos como en tareas diarias.
+</p>
 
-<section class="features">
+<div class="buttons">
 
-    <h2 class="title">¿Por qué usar Wayzux Optis?</h2>
+<a href="Optimizacion%20wayzux%20(beta).rar"
+download
+class="btn download">
+⬇ Descargar Wayzux Optis
+</a>
 
-    <div class="cards">
+<a href="https://github.com/wayzux/WayxusOptimizacionbeta.github.io"
+target="_blank"
+class="btn github">
+⭐ Ver repositorio GitHub
+</a>
 
-        <div class="card">
-            <h3>🎮 Más FPS</h3>
-            <p>
-                Reduce servicios innecesarios y optimiza procesos para ofrecer
-                una experiencia más fluida en juegos exigentes.
-            </p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>⚡ Menor consumo</h3>
-            <p>
-                Disminuye el uso de RAM y CPU en tareas secundarias para
-                aprovechar mejor los recursos del sistema.
-            </p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>🧹 Limpieza automática</h3>
-            <p>
-                Elimina archivos temporales y datos innecesarios que pueden
-                ralentizar el rendimiento con el tiempo.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🔒 Seguro</h3>
-            <p>
-                Ajustes reversibles y optimizaciones diseñadas para mantener
-                la estabilidad del sistema.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🚀 Inicio rápido</h3>
-            <p>
-                Optimiza la carga del sistema para reducir tiempos de arranque
-                y mejorar la respuesta general.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>📈 Rendimiento constante</h3>
-            <p>
-                Mantiene el sistema limpio y optimizado para evitar pérdidas
-                progresivas de rendimiento.
-            </p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<section class="stats">
+<section>
 
-    <h2 class="title">Resultados estimados</h2>
+<h2 class="title">🔥 Características principales</h2>
 
-    <div class="stats-grid">
+<div class="cards">
 
-        <div class="stat">
-            <h2>+25%</h2>
-            <p>Rendimiento general</p>
-        </div>
+<div class="card">
+<h3>🎮 Optimización Gaming</h3>
+<p>
+Reduce procesos innecesarios y libera recursos para ofrecer una experiencia
+más fluida en videojuegos.
+</p>
+</div>
 
-        <div class="stat">
-            <h2>+40</h2>
-            <p>FPS en algunos juegos*</p>
-        </div>
+<div class="card">
+<h3>⚡ Limpieza Inteligente</h3>
+<p>
+Elimina archivos temporales, cachés y residuos acumulados que pueden ralentizar
+el sistema.
+</p>
+</div>
 
-        <div class="stat">
-            <h2>-35%</h2>
-            <p>Uso de RAM</p>
-        </div>
+<div class="card">
+<h3>🧠 Gestión de Recursos</h3>
+<p>
+Ayuda a mejorar el uso de RAM y CPU para aprovechar mejor el hardware disponible.
+</p>
+</div>
 
-        <div class="stat">
-            <h2>1 Click</h2>
-            <p>Para optimizar</p>
-        </div>
+<div class="card">
+<h3>🚀 Arranque Más Rápido</h3>
+<p>
+Optimiza ciertos procesos de inicio para reducir tiempos de carga del sistema.
+</p>
+</div>
 
-    </div>
+<div class="card">
+<h3>🔄 Actualizaciones Constantes</h3>
+<p>
+Proyecto en desarrollo continuo con nuevas mejoras y optimizaciones.
+</p>
+</div>
 
-    <p style="margin-top:30px;color:#94a3b8;">
-        *Los resultados dependen del hardware y configuración de cada equipo.
-    </p>
+<div class="card">
+<h3>🔒 Fácil y Seguro</h3>
+<p>
+Diseñado para ser sencillo de usar incluso para usuarios sin experiencia.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">📈 Resultados estimados</h2>
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>+25%</h2>
+<p>Rendimiento general</p>
+</div>
+
+<div class="stat">
+<h2>+40</h2>
+<p>FPS en algunos juegos*</p>
+</div>
+
+<div class="stat">
+<h2>-35%</h2>
+<p>Uso de RAM</p>
+</div>
+
+<div class="stat">
+<h2>1 Click</h2>
+<p>Para optimizar</p>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:30px;color:#94a3b8;">
+*Los resultados pueden variar según el hardware y la configuración del equipo.
+</p>
+
+</section>
+
+<section>
+
+<h2 class="title">⭐ Reseñas de usuarios</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎮 GamerPro27</h3>
+<p>
+"Antes tenía bajones de FPS constantes. Después de usar Wayzux Optis
+el sistema va mucho más fluido y los juegos cargan más rápido."
+</p>
+<br>
+<strong>★★★★★</strong>
+</div>
+
+<div class="card">
+<h3>💻 Carlos M.</h3>
+<p>
+"Muy fácil de usar. En un clic optimicé Windows y noté menos uso
+de RAM mientras jugaba."
+</p>
+<br>
+<strong>★★★★★</strong>
+</div>
+
+<div class="card">
+<h3>🚀 Lucía R.</h3>
+<p>
+"Mi portátil iba bastante lento. Después de ejecutar Wayzux Optis
+mejoró el tiempo de arranque y la respuesta general."
+</p>
+<br>
+<strong>★★★★☆</strong>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 Wayzux Optis • Optimización inteligente para jugadores y usuarios avanzados.
+© 2026 Wayzux Optis • Optimización inteligente para Windows.
 </footer>
 
 </body>
