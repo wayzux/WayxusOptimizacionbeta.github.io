@@ -107,7 +107,32 @@ h1{
     margin-bottom:30px;
 }
 
-/* DOWNLOAD BLOQUEO */
+/* BOTONES */
+.btn{
+    padding:16px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    display:inline-block;
+}
+
+.download{
+    background:linear-gradient(90deg,#6366f1,#06b6d4);
+    color:white;
+}
+
+.github{
+    background:rgba(255,255,255,.05);
+    color:white;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+/* BLOQUEO DESCARGA */
 .download-box{
     margin-top:20px;
     padding:20px;
@@ -120,21 +145,6 @@ h1{
     display:block;
     margin-bottom:15px;
     color:#cbd5e1;
-}
-
-.btn{
-    padding:16px 30px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:600;
-    display:inline-block;
-    transition:.3s;
-    text-align:center;
-}
-
-.download{
-    background:linear-gradient(90deg,#6366f1,#06b6d4);
-    color:white;
 }
 
 .disabled{
@@ -165,13 +175,15 @@ section{
     backdrop-filter:blur(10px);
     padding:30px;
     border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#6366f1;
 }
 
 /* RESEÑAS */
-.reviews{
-    background:rgba(255,255,255,.03);
-}
-
 .review-stars{
     color:#fbbf24;
     margin-top:10px;
@@ -182,6 +194,11 @@ footer{
     padding:40px;
     color:#94a3b8;
     border-top:1px solid rgba(255,255,255,.08);
+}
+
+@media(max-width:768px){
+h1{font-size:3rem;}
+.title{font-size:2.2rem;}
 }
 </style>
 </head>
@@ -203,11 +220,78 @@ footer{
 <h1><span class="gradient">Wayzux Optis</span></h1>
 
 <p>
-Wayzux Optis mejora el rendimiento de Windows eliminando procesos innecesarios,
-liberando RAM y optimizando el sistema para gaming y uso diario.
+Wayzux Optis es una herramienta de optimización para Windows que mejora rendimiento,
+libera RAM y reduce procesos innecesarios para gaming y uso diario.
 </p>
 
-<!-- DESCARGA BLOQUEADA -->
+</div>
+
+</div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section>
+<h2 class="title">🔥 Características</h2>
+
+<div class="cards">
+<div class="card">🎮 Optimización Gaming</div>
+<div class="card">⚡ Limpieza automática</div>
+<div class="card">🧠 Mejor uso de RAM</div>
+<div class="card">🚀 Inicio más rápido</div>
+<div class="card">🔄 Actualizaciones</div>
+<div class="card">🔒 Fácil y seguro</div>
+</div>
+</section>
+
+<!-- RESULTADOS -->
+<section>
+<h2 class="title">📈 Resultados</h2>
+
+<div class="cards">
+<div class="card">+25% rendimiento</div>
+<div class="card">+40 FPS</div>
+<div class="card">-35% RAM</div>
+<div class="card">1 clic</div>
+</div>
+</section>
+
+<!-- RESEÑAS FALSAS -->
+<section>
+<h2 class="title">⭐ Reseñas de usuarios</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>GamerXPro</h3>
+<p>"Me subió los FPS en todos los juegos, increíble."</p>
+<div class="review-stars">★★★★★</div>
+</div>
+
+<div class="card">
+<h3>LucasTech</h3>
+<p>"Mi PC ahora arranca mucho más rápido, recomendado."</p>
+<div class="review-stars">★★★★★</div>
+</div>
+
+<div class="card">
+<h3>AnnaDev</h3>
+<p>"Muy ligero, noté menos lag en programas pesados."</p>
+<div class="review-stars">★★★★☆</div>
+</div>
+
+<div class="card">
+<h3>ShadowPC</h3>
+<p>"Pensé que no funcionaría, pero sí mejora bastante."</p>
+<div class="review-stars">★★★★★</div>
+</div>
+
+</div>
+</section>
+
+<!-- DESCARGA (AL FINAL COMO PEDISTE) -->
+<section>
+<h2 class="title">⬇ Descargar</h2>
+
 <div class="download-box">
 
 <label>
@@ -223,79 +307,6 @@ class="btn download disabled">
 </a>
 
 </div>
-
-</div>
-</div>
-
-</section>
-
-<section>
-<h2 class="title">🔥 Características</h2>
-
-<div class="cards">
-
-<div class="card">🎮 Mejora FPS en juegos</div>
-<div class="card">⚡ Limpieza de archivos basura</div>
-<div class="card">🧠 Optimización de RAM</div>
-<div class="card">🚀 Inicio más rápido</div>
-<div class="card">🔄 Actualizaciones constantes</div>
-<div class="card">🔒 Seguro y fácil de usar</div>
-
-</div>
-</section>
-
-<section>
-<h2 class="title">📈 Resultados</h2>
-
-<div class="cards">
-
-<div class="card">+25% rendimiento</div>
-<div class="card">+40 FPS en juegos</div>
-<div class="card">-35% uso de RAM</div>
-<div class="card">1 clic para optimizar</div>
-
-</div>
-</section>
-
-<!-- RESEÑAS INVENTADAS -->
-<section class="reviews">
-
-<h2 class="title">⭐ Reseñas de usuarios</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>GamerXPro</h3>
-<p>“Desde que lo uso, Fortnite me va mucho más estable. Brutal optimización.”</p>
-<div class="review-stars">★★★★★</div>
-</div>
-
-<div class="card">
-<h3>LucasTech</h3>
-<p>“Mi PC vieja ahora arranca mucho más rápido. No esperaba tanto cambio.”</p>
-<div class="review-stars">★★★★★</div>
-</div>
-
-<div class="card">
-<h3>AnnaDev</h3>
-<p>“Muy simple pero efectivo. Noté menos lag en programas pesados.”</p>
-<div class="review-stars">★★★★☆</div>
-</div>
-
-<div class="card">
-<h3>ShadowPC</h3>
-<p>“Pensé que era fake, pero sí mejora el rendimiento real del sistema.”</p>
-<div class="review-stars">★★★★★</div>
-</div>
-
-<div class="card">
-<h3>MrBoost</h3>
-<p>“Lo uso en mi portátil y ahora no se bloquea como antes.”</p>
-<div class="review-stars">★★★★☆</div>
-</div>
-
-</div>
-
 </section>
 
 <footer>
